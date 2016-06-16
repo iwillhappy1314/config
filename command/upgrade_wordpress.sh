@@ -7,6 +7,7 @@ service nginx stop
 find /home/wwwroot -mindepth 1 -maxdepth 1 -type d| xargs -n 1 chattr -R -i
 
 # 再复制更新到所有站点
+# 复制之前，先把最新版本的 WordPress 内核上传到 `/home/www/wordpress/` 目录中
 find /home/wwwroot -mindepth 1 -maxdepth 1 -type d| xargs -n 1 \cp /home/www/wordpress/* -fra
 
 # 然后锁定文件
